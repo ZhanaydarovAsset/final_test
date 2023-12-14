@@ -1,8 +1,6 @@
-package org.example.Model;
+package org.example.model;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public abstract class BasePet {
     private int petId;
@@ -29,8 +27,19 @@ public abstract class BasePet {
         return birthday;
     }
 
-    public ArrayList<String> getComands(){
+    public ArrayList<String> getCommands(){
         return comands;
     }
 
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
+    public void setBirthday(String newBirthday) {
+        this.birthday = newBirthday;
+    }
+
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
 }
