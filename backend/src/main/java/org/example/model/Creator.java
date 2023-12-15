@@ -1,7 +1,7 @@
 package org.example.model;
 
 public class Creator {
-    public static BasePet createPet(String type, String name, String birthday, String commands) {
+    public  BasePet createPet(String type, String name, String birthday, String commands) {
         switch (type.toLowerCase()) {
             case "cat":
                 return new Cat( 0, name, birthday, commands);

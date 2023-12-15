@@ -13,21 +13,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PetRepository {
-    private final Connection connection = MyConnection.getConnection();
+    private static   String query;
+    private static Creator petCreat;
+    private static final Connection connection;
 
-    public List<BasePet> getAll(){
+    static {
+        try {
+            connection = MyConnection.getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public PetRepository() throws SQLException, IOException {
+        this.petCreat = new Creator();
+    }
+
+    public static List<BasePet> getAll(){
         List<BasePet> petList = new ArrayList<>();
         BasePet pet;
-        String query = "SELECT petId, name, birthday, commands, type FROM pets";
+
+        query = "SELECT Name, Birthday, Commands FROM cats\n" +
+                "UNION SELECT  Name, Birthday, Commands FROM dogs;";
         try(PreparedStatement statement = connection.prepareStatement(query)){
             try(ResultSet resultSet = statement.executeQuery()){
                 while (resultSet.next()){
-                    int petId = resultSet.getInt("petId");
+
                     String name = resultSet.getString("name");
                     String birthday = resultSet.getString("birthday");
                     String commands = resultSet.getString("commands");
 
-                    pet = BasePet createPet(String type, String name, String birthday, String commands);
+                pet = petCreat.createPet("cat", name, birthday,commands);
 
                     petList.add(pet);
                 }
@@ -37,5 +55,6 @@ public class PetRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return petList;
     }
 }
