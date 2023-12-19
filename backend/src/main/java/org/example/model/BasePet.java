@@ -45,6 +45,6 @@ public abstract class BasePet {
 
     @Override
     public String toString() {
-        return String.format("Id: %d, name: %s", getPetId(), getName());
+        return String.format("%d. %s: имя: %s, дата рождения: %s ", getPetId(), getClass().getSimpleName(), name, getBirthday());
     }
 }

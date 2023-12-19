@@ -11,8 +11,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args){
-        Creator creator = new PetCreator();
-        BasePet dog = creator.creatPet(PetType.Dog, "baron", "01.01.2022");
+    public static void main(String[] args) {
+
+
+        PetRepository petRepository = new PetRepository();
+        petRepository.printAllPets();
     }
 }
