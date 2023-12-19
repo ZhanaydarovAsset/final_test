@@ -3,17 +3,17 @@ package org.example.model;
 import java.util.ArrayList;
 
 public abstract class BasePet {
-    private int petId;
-    private String name;
-    private String birthday;
-    private ArrayList<String> comands;
+    protected int petId;
+    protected String name;
+    protected String birthday;
+    //private ArrayList<String> comands;
 
-    public BasePet(int petId, String name, String birthday) {
-        this.petId = petId;
-        this.name = name;
-        this.birthday = birthday;
-        this.comands = new ArrayList<>();
-    }
+//    public BasePet(int petId, String name, String birthday) {
+//        this.petId = petId;
+//        this.name = name;
+//        this.birthday = birthday;
+//        //this.comands = new ArrayList<>();
+//    }
 
     public int getPetId(){
         return petId;
@@ -27,9 +27,9 @@ public abstract class BasePet {
         return birthday;
     }
 
-    public ArrayList<String> getCommands(){
-        return comands;
-    }
+//    public ArrayList<String> getCommands(){
+//        return comands;
+//    }
 
     public void setName(String newName) {
         this.name = newName;
@@ -41,5 +41,10 @@ public abstract class BasePet {
 
     public void setPetId(int petId) {
         this.petId = petId;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Id: %d, name: %s", getPetId(), getName());
     }
 }
