@@ -10,24 +10,24 @@
 ослы), а затем объединить их. Просмотреть содержимое созданного файла.
 Переименовать файл, дав ему новое имя (Друзья человека).
 
-![Alt text](images\image-1.png)
+![Alt text](image.png)
 
 2. Создать директорию, переместить файл туда.
 
-![Alt text](images\image-1.png)
+![Alt text](image-1.png)
 
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
 из этого репозитория.
 
-![Alt text](images\image-2.png)
-![Alt text](images\image-3.png)
-![Alt text](images\image-4.png)
+![Alt text](image-2.png)
+![Alt text](image-3.png)
+![Alt text](image-4.png)
 
 4. Установить и удалить deb-пакет с помощью dpkg.
 
-![Alt text](images\image-5.png)
-![Alt text](images\image-6.png)
-![Alt text](images\image-7.png)
+![Alt text](image-5.png)
+![Alt text](image-6.png)
+![Alt text](image-7.png)
 
 5. Выложить историю команд в терминале ubuntu
 
